@@ -19,10 +19,10 @@
     min-height:100vh;
     background:var(--cream);
   }
-  .wrap{max-width:640px;margin:0 auto;padding:18px 12px 60px;}
-  .logo-block{text-align:center;margin-bottom:14px;}
-  .logo{display:block;width:70px;margin:0 auto 4px;filter:drop-shadow(0 4px 10px rgba(105,3,28,.2));}
-  h1{text-align:center;font-size:17px;color:var(--maroon);margin:0 0 18px;font-weight:800;}
+  .wrap{max-width:680px;margin:0 auto;padding:18px 12px 80px;}
+  .logo-block{text-align:center;margin-bottom:10px;}
+  .logo{display:block;width:60px;margin:0 auto;filter:drop-shadow(0 4px 10px rgba(105,3,28,.2));}
+  h1{text-align:center;font-size:17px;color:var(--maroon);margin:4px 0 18px;font-weight:800;}
 
   #loginBox{max-width:320px;margin:60px auto;padding:26px;background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(105,3,28,.12);}
   #loginBox input{width:100%;padding:12px;border:1.5px solid rgba(105,3,28,.15);border-radius:10px;font-size:15px;margin-bottom:12px;background:#faf5ed;}
@@ -31,66 +31,72 @@
 
   #panel{display:none;}
 
-  .note{
-    background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:16px;
-    font-size:12.5px;line-height:2;color:var(--maroon-dark);opacity:.85;
-    box-shadow:0 4px 12px rgba(105,3,28,.06);
-  }
-
-  .new-company{
-    display:flex;gap:8px;margin-bottom:18px;
-  }
-  .new-company input{
-    flex:1;padding:11px 13px;border:1.5px dashed var(--gold);border-radius:10px;
-    font-size:14px;background:#fff;font-family:inherit;
-  }
-  .new-company button{
-    padding:11px 16px;background:linear-gradient(135deg, var(--maroon), var(--gold));
-    color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap;
+  .dashed-btn{
+    display:block;width:100%;padding:14px;margin-bottom:16px;
+    background:#fff6ea;border:1.5px dashed var(--gold);border-radius:12px;
+    color:var(--maroon);font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;
   }
 
   .company-card{
     background:#fff;border-radius:14px;overflow:hidden;margin-bottom:18px;
     box-shadow:0 4px 16px rgba(105,3,28,.08);
   }
-  .company-bar{
-    background:linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+  .bar{
     display:flex;align-items:center;justify-content:space-between;
-    padding:12px 14px;
+    padding:12px 14px;gap:10px;
   }
+  .company-bar{background:linear-gradient(135deg, var(--maroon), var(--maroon-dark));}
   .company-bar .name{color:var(--gold);font-size:15px;font-weight:800;}
-  .company-bar button{
-    background:rgba(255,255,255,.12);color:#f3d9d9;border:1px solid rgba(255,255,255,.3);
-    border-radius:8px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit;
+  .subcat-bar{background:#f3e6cf;}
+  .subcat-bar .name{color:var(--maroon-dark);font-size:13.5px;font-weight:800;}
+
+  .bar .left{display:flex;align-items:center;gap:8px;}
+  .arrows{display:flex;flex-direction:column;gap:1px;}
+  .arrows button{background:none;border:none;font-size:11px;cursor:pointer;padding:0;line-height:1;}
+  .company-bar .arrows button{color:#f0dcc0;}
+  .subcat-bar .arrows button{color:var(--maroon);}
+  .del-group-btn{
+    border:none;border-radius:8px;padding:6px 12px;font-size:11.5px;cursor:pointer;font-family:inherit;
   }
+  .company-bar .del-group-btn{background:rgba(255,255,255,.14);color:#f3d9d9;}
+  .subcat-bar .del-group-btn{background:rgba(105,3,28,.1);color:#b71c1c;}
 
   .row{
-    display:flex;align-items:center;gap:8px;padding:10px 12px;
+    display:flex;align-items:center;gap:6px;padding:9px 10px;
     border-bottom:1px solid rgba(105,3,28,.06);
   }
   .row:last-child{border-bottom:none;}
-  .row .arrows{display:flex;flex-direction:column;gap:2px;}
-  .row .arrows button{
-    background:none;border:none;color:var(--maroon);font-size:11px;cursor:pointer;padding:0;line-height:1;
-  }
   .row .del{
     background:rgba(183,28,28,.1);color:#b71c1c;border:none;border-radius:8px;
-    width:30px;height:30px;font-size:14px;cursor:pointer;flex-shrink:0;
+    width:28px;height:28px;font-size:13px;cursor:pointer;flex-shrink:0;
   }
   .row input{
-    border:1.5px solid rgba(105,3,28,.12);border-radius:8px;padding:8px 10px;
-    font-size:13.5px;font-family:inherit;background:#faf5ed;color:var(--maroon-dark);
+    border:1.5px solid rgba(105,3,28,.12);border-radius:8px;padding:8px 8px;
+    font-size:13px;font-family:inherit;background:#faf5ed;color:var(--maroon-dark);min-width:0;
   }
-  .row .price-input{width:100px;text-align:center;font-weight:800;color:var(--gold);}
+  .row .price-input{width:92px;text-align:center;font-weight:800;color:var(--gold);flex-shrink:0;}
+  .row .size-input{width:72px;text-align:center;flex-shrink:0;}
   .row .album-input{flex:1;text-align:right;}
 
   .add-row-btn{
-    display:block;width:100%;padding:12px;background:none;
+    display:block;width:100%;padding:11px;background:none;
     border:1.5px dashed var(--gold);border-top:none;border-left:none;border-right:none;
-    color:var(--maroon);font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;
+    color:var(--maroon);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;
   }
 
   .empty{text-align:center;padding:40px 10px;opacity:.6;}
+
+  .save-bar{
+    position:fixed;bottom:0;left:0;right:0;
+    background:#fff;padding:12px 14px;
+    box-shadow:0 -4px 16px rgba(105,3,28,.12);
+    display:flex;gap:10px;
+  }
+  .save-bar button{
+    flex:1;padding:13px;border:none;border-radius:10px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;
+  }
+  #saveBtn{background:linear-gradient(135deg,#2e7d4f,#1b5e38);color:#fff;}
+  #saveStatus{text-align:center;font-size:12px;color:var(--maroon-dark);opacity:.7;padding:6px 0 0;}
 </style>
 </head>
 <body>
@@ -107,17 +113,14 @@
   </div>
 
   <div id="panel">
-    <div class="note">
-      قیمت‌ها و اسم آلبوم رو مستقیم توی همین کادرها تغییر بده — خودش ذخیره میشه و فوراً روی سایت اصلی نمایش داده میشه. برای اضافه/حذف از دکمه‌های مربوطه استفاده کن.
-    </div>
-
-    <div class="new-company">
-      <input type="text" id="newCompanyName" placeholder="+ نام شرکت جدید">
-      <button onclick="addCompany()">افزودن شرکت</button>
-    </div>
-
     <div id="list"></div>
+    <button class="dashed-btn" onclick="addCompany()">+ افزودن دسته جدید</button>
+    <div id="saveStatus"></div>
   </div>
+</div>
+
+<div class="save-bar" id="saveBar" style="display:none;">
+  <button id="saveBtn" onclick="saveChanges()">ذخیره تغییرات</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
@@ -129,12 +132,14 @@
   const ADMIN_PASSWORD = "alokaghaz-admin-1404";
 
   let allItems = [];
+  let pendingEdits = {}; // id -> {field: value}
 
   function login(){
     const val = document.getElementById('pwd').value;
     if(val === ADMIN_PASSWORD){
       document.getElementById('loginBox').style.display = "none";
       document.getElementById('panel').style.display = "block";
+      document.getElementById('saveBar').style.display = "flex";
       loadItems();
     } else {
       document.getElementById('loginErr').style.display = "block";
@@ -152,74 +157,140 @@
       return;
     }
     allItems = data || [];
+    pendingEdits = {};
     render();
+  }
+
+  function fieldVal(item, field){
+    if(pendingEdits[item.id] && pendingEdits[item.id][field] !== undefined){
+      return pendingEdits[item.id][field];
+    }
+    return item[field] || "";
+  }
+
+  function onEdit(id, field, value){
+    if(!pendingEdits[id]) pendingEdits[id] = {};
+    pendingEdits[id][field] = value;
+  }
+
+  function buildTree(){
+    const companies = [];
+    const byCompany = {};
+    allItems.forEach(item => {
+      if(!byCompany[item.company]){
+        const c = { name: item.company, directItems: [], subcats: [], subcatOrder: [] };
+        byCompany[item.company] = c;
+        companies.push(c);
+      }
+      const c = byCompany[item.company];
+      if(item.subcategory){
+        let sc = c.subcats.find(s => s.name === item.subcategory);
+        if(!sc){ sc = { name: item.subcategory, items: [] }; c.subcats.push(sc); }
+        sc.items.push(item);
+      } else {
+        c.directItems.push(item);
+      }
+    });
+    return companies;
   }
 
   function render(){
     const list = document.getElementById('list');
-    if(allItems.length === 0){
-      list.innerHTML = "<div class='empty'>هنوز شرکتی اضافه نشده — از بالا شروع کن</div>";
+    const tree = buildTree();
+    if(tree.length === 0){
+      list.innerHTML = "<div class='empty'>هنوز دسته‌ای اضافه نشده</div>";
       return;
     }
-    const companies = [];
-    const grouped = {};
-    allItems.forEach(item => {
-      if(!grouped[item.company]){ grouped[item.company] = []; companies.push(item.company); }
-      grouped[item.company].push(item);
-    });
 
-    list.innerHTML = companies.map(company => `
+    list.innerHTML = tree.map((c, ci) => `
       <div class="company-card">
-        <div class="company-bar">
-          <button onclick="deleteCompany('${company.replace(/'/g,"\\'")}')">حذف دسته</button>
-          <span class="name">${company}</span>
-        </div>
-        ${grouped[company].map((a, idx) => `
-          <div class="row" data-id="${a.id}">
-            <button class="del" onclick="deleteItem('${a.id}')">×</button>
+        <div class="bar company-bar">
+          <div class="left">
+            <button class="del-group-btn" onclick="deleteCompany('${esc(c.name)}')">حذف دسته</button>
             <div class="arrows">
-              <button onclick="moveItem('${a.id}', -1)">▲</button>
-              <button onclick="moveItem('${a.id}', 1)">▼</button>
+              <button onclick="moveCompany(${ci}, -1)">▲</button>
+              <button onclick="moveCompany(${ci}, 1)">▼</button>
             </div>
-            <input class="price-input" value="${a.price}" onchange="updateField('${a.id}','price',this.value)">
-            <input class="album-input" value="${a.album}" onchange="updateField('${a.id}','album',this.value)">
           </div>
+          <span class="name">${c.name}</span>
+        </div>
+
+        ${c.directItems.map((item, ii) => rowHtml(item, c.directItems, ii)).join('')}
+        <button class="add-row-btn" onclick="addItem('${esc(c.name)}', null)">+ افزودن محصول</button>
+
+        ${c.subcats.map((sc, si) => `
+          <div class="bar subcat-bar">
+            <div class="left">
+              <button class="del-group-btn" onclick="deleteSubcat('${esc(c.name)}','${esc(sc.name)}')">حذف زیردسته</button>
+              <div class="arrows">
+                <button onclick="moveSubcat(${ci}, ${si}, -1)">▲</button>
+                <button onclick="moveSubcat(${ci}, ${si}, 1)">▼</button>
+              </div>
+            </div>
+            <span class="name">${sc.name}</span>
+          </div>
+          ${sc.items.map((item, ii) => rowHtml(item, sc.items, ii)).join('')}
+          <button class="add-row-btn" onclick="addItem('${esc(c.name)}', '${esc(sc.name)}')">+ افزودن محصول</button>
         `).join('')}
-        <button class="add-row-btn" onclick="addAlbum('${company.replace(/'/g,"\\'")}')">+ افزودن آلبوم</button>
+
+        <button class="add-row-btn" onclick="addSubcat('${esc(c.name)}')">+ افزودن زیردسته</button>
       </div>
     `).join('');
   }
 
+  function esc(s){ return String(s).replace(/'/g, "\\'"); }
+
+  function rowHtml(item, siblings, idx){
+    return `
+      <div class="row">
+        <button class="del" onclick="deleteItem('${item.id}')">×</button>
+        <div class="arrows">
+          <button onclick="moveItemInGroup('${item.id}', -1)">▲</button>
+          <button onclick="moveItemInGroup('${item.id}', 1)">▼</button>
+        </div>
+        <input class="price-input" value="${fieldVal(item,'price')}" placeholder="قیمت"
+          onchange="onEdit('${item.id}','price',this.value)">
+        <input class="size-input" value="${fieldVal(item,'size')}" placeholder="سایز"
+          onchange="onEdit('${item.id}','size',this.value)">
+        <input class="album-input" value="${fieldVal(item,'album')}" placeholder="نام آلبوم"
+          onchange="onEdit('${item.id}','album',this.value)">
+      </div>
+    `;
+  }
+
   async function addCompany(){
-    const name = document.getElementById('newCompanyName').value.trim();
-    if(!name) return;
+    const name = prompt("نام شرکت/دسته جدید رو وارد کن:");
+    if(!name || !name.trim()) return;
     const maxOrder = allItems.reduce((m,i) => Math.max(m, i.sort_order||0), 0);
     const { error } = await supabaseClient.from('price_list').insert([{
-      company: name, album: "آلبوم جدید", price: "0", sort_order: maxOrder + 1
-    }]);
-    if(error){ alert("خطا در ثبت"); console.error(error); return; }
-    document.getElementById('newCompanyName').value = "";
-    loadItems();
-  }
-
-  async function addAlbum(company){
-    const maxOrder = allItems.reduce((m,i) => Math.max(m, i.sort_order||0), 0);
-    const { error } = await supabaseClient.from('price_list').insert([{
-      company, album: "آلبوم جدید", price: "0", sort_order: maxOrder + 1
+      company: name.trim(), album: "محصول جدید", price: "0", sort_order: maxOrder + 1
     }]);
     if(error){ alert("خطا در ثبت"); console.error(error); return; }
     loadItems();
   }
 
-  async function updateField(id, field, value){
-    const payload = {};
-    payload[field] = value;
-    const { error } = await supabaseClient.from('price_list').update(payload).eq('id', id);
-    if(error){ alert("خطا در ذخیره"); console.error(error); }
+  async function addSubcat(company){
+    const name = prompt("نام زیردسته جدید رو وارد کن:");
+    if(!name || !name.trim()) return;
+    const maxOrder = allItems.reduce((m,i) => Math.max(m, i.sort_order||0), 0);
+    const { error } = await supabaseClient.from('price_list').insert([{
+      company, subcategory: name.trim(), album: "محصول جدید", price: "0", sort_order: maxOrder + 1
+    }]);
+    if(error){ alert("خطا در ثبت"); console.error(error); return; }
+    loadItems();
+  }
+
+  async function addItem(company, subcategory){
+    const maxOrder = allItems.reduce((m,i) => Math.max(m, i.sort_order||0), 0);
+    const { error } = await supabaseClient.from('price_list').insert([{
+      company, subcategory: subcategory || null, album: "محصول جدید", price: "0", sort_order: maxOrder + 1
+    }]);
+    if(error){ alert("خطا در ثبت"); console.error(error); return; }
+    loadItems();
   }
 
   async function deleteItem(id){
-    if(!confirm("این آلبوم حذف بشه؟")) return;
+    if(!confirm("این محصول حذف بشه؟")) return;
     await supabaseClient.from('price_list').delete().eq('id', id);
     loadItems();
   }
@@ -230,19 +301,83 @@
     loadItems();
   }
 
-  async function moveItem(id, direction){
-    const idx = allItems.findIndex(i => i.id === id);
-    if(idx === -1) return;
-    const swapIdx = idx + direction;
-    if(swapIdx < 0 || swapIdx >= allItems.length) return;
-    // فقط در همون دسته جابه‌جا بشه
-    if(allItems[swapIdx].company !== allItems[idx].company) return;
+  async function deleteSubcat(company, subcategory){
+    if(!confirm(`زیردسته "${subcategory}" حذف بشه؟`)) return;
+    await supabaseClient.from('price_list').delete().eq('company', company).eq('subcategory', subcategory);
+    loadItems();
+  }
 
-    const a = allItems[idx], b = allItems[swapIdx];
-    const aOrder = a.sort_order, bOrder = b.sort_order;
+  async function applyTreeOrder(tree){
+    const flat = [];
+    tree.forEach(c => {
+      c.directItems.forEach(it => flat.push(it));
+      c.subcats.forEach(sc => sc.items.forEach(it => flat.push(it)));
+    });
+    const updates = flat.map((item, idx) => {
+      if(item.sort_order === idx) return null;
+      return supabaseClient.from('price_list').update({ sort_order: idx }).eq('id', item.id);
+    }).filter(Boolean);
+    await Promise.all(updates);
+    loadItems();
+  }
 
-    await supabaseClient.from('price_list').update({ sort_order: bOrder }).eq('id', a.id);
-    await supabaseClient.from('price_list').update({ sort_order: aOrder }).eq('id', b.id);
+  function moveCompany(index, dir){
+    const tree = buildTree();
+    const target = index + dir;
+    if(target < 0 || target >= tree.length) return;
+    [tree[index], tree[target]] = [tree[target], tree[index]];
+    applyTreeOrder(tree);
+  }
+
+  function moveSubcat(ci, si, dir){
+    const tree = buildTree();
+    const c = tree[ci];
+    const target = si + dir;
+    if(target < 0 || target >= c.subcats.length) return;
+    [c.subcats[si], c.subcats[target]] = [c.subcats[target], c.subcats[si]];
+    applyTreeOrder(tree);
+  }
+
+  function moveItemInGroup(id, dir){
+    const tree = buildTree();
+    for(const c of tree){
+      let arr = null;
+      let idx = c.directItems.findIndex(i => i.id === id);
+      if(idx !== -1){ arr = c.directItems; }
+      else {
+        for(const sc of c.subcats){
+          idx = sc.items.findIndex(i => i.id === id);
+          if(idx !== -1){ arr = sc.items; break; }
+        }
+      }
+      if(arr){
+        const target = idx + dir;
+        if(target < 0 || target >= arr.length) return;
+        [arr[idx], arr[target]] = [arr[target], arr[idx]];
+        applyTreeOrder(tree);
+        return;
+      }
+    }
+  }
+
+  async function saveChanges(){
+    const ids = Object.keys(pendingEdits);
+    if(ids.length === 0){
+      document.getElementById('saveStatus').textContent = "تغییری برای ذخیره نیست";
+      setTimeout(() => document.getElementById('saveStatus').textContent = "", 2000);
+      return;
+    }
+    const btn = document.getElementById('saveBtn');
+    btn.disabled = true;
+    btn.textContent = "در حال ذخیره...";
+
+    const updates = ids.map(id => supabaseClient.from('price_list').update(pendingEdits[id]).eq('id', id));
+    await Promise.all(updates);
+
+    btn.disabled = false;
+    btn.textContent = "ذخیره تغییرات";
+    document.getElementById('saveStatus').textContent = "✓ ذخیره شد و روی سایت اصلی اعمال شد";
+    setTimeout(() => document.getElementById('saveStatus').textContent = "", 3000);
     loadItems();
   }
 </script>

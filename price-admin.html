@@ -10,8 +10,6 @@
     --maroon:#69031C;
     --gold:#BC8F47;
     --maroon-dark:#4a0214;
-    --glass-bg: rgba(255,255,255,0.55);
-    --glass-border: rgba(255,255,255,0.6);
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
@@ -19,64 +17,79 @@
     font-family:'Vazirmatn','Tahoma',sans-serif;
     color:var(--maroon-dark);
     min-height:100vh;
-    background:
-      radial-gradient(circle at 15% 10%, rgba(105,3,28,0.16), transparent 45%),
-      radial-gradient(circle at 85% 15%, rgba(105,3,28,0.10), transparent 40%),
-      radial-gradient(circle at 50% 90%, rgba(105,3,28,0.14), transparent 50%),
-      var(--cream);
-    background-attachment:fixed;
+    background:var(--cream);
   }
-  .wrap{max-width:600px;margin:0 auto;padding:24px 14px 60px;}
-  .logo-block{text-align:center;margin-bottom:16px;}
-  .logo{display:block;width:76px;margin:0 auto 6px;filter:drop-shadow(0 6px 14px rgba(105,3,28,.18));}
-  h1{text-align:center;font-size:18px;color:var(--maroon);margin:0 0 20px;font-weight:800;}
+  .wrap{max-width:640px;margin:0 auto;padding:18px 12px 60px;}
+  .logo-block{text-align:center;margin-bottom:14px;}
+  .logo{display:block;width:70px;margin:0 auto 4px;filter:drop-shadow(0 4px 10px rgba(105,3,28,.2));}
+  h1{text-align:center;font-size:17px;color:var(--maroon);margin:0 0 18px;font-weight:800;}
 
-  .glass{
-    background:var(--glass-bg);
-    backdrop-filter:blur(18px) saturate(160%);
-    -webkit-backdrop-filter:blur(18px) saturate(160%);
-    border:1px solid var(--glass-border);
-    border-radius:20px;
-    box-shadow:0 8px 30px rgba(105,3,28,.10), inset 0 1px 0 rgba(255,255,255,.5);
-  }
-
-  #loginBox{max-width:320px;margin:60px auto;padding:28px;}
-  #loginBox input{
-    width:100%;padding:12px;border:1.5px solid rgba(105,3,28,.15);border-radius:12px;
-    font-size:15px;margin-bottom:12px;background:rgba(255,255,255,.65);color:var(--maroon-dark);
-  }
-  #loginBox button{
-    width:100%;padding:13px;background:linear-gradient(135deg, var(--maroon), var(--gold));
-    color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;
-    box-shadow:0 10px 24px rgba(105,3,28,.25);
-  }
-  #loginErr{color:#b71c1c;font-size:13px;text-align:center;margin-top:10px;display:none;}
+  #loginBox{max-width:320px;margin:60px auto;padding:26px;background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(105,3,28,.12);}
+  #loginBox input{width:100%;padding:12px;border:1.5px solid rgba(105,3,28,.15);border-radius:10px;font-size:15px;margin-bottom:12px;background:#faf5ed;}
+  #loginBox button{width:100%;padding:12px;background:linear-gradient(135deg, var(--maroon), var(--gold));color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:800;cursor:pointer;}
+  #loginErr{color:#b71c1c;font-size:13px;text-align:center;margin-top:8px;display:none;}
 
   #panel{display:none;}
 
-  .add-card{padding:18px;margin-bottom:18px;}
-  .add-card label{display:block;font-size:13px;font-weight:700;margin:10px 0 5px;}
-  .add-card label:first-child{margin-top:0;}
-  .add-card input{
-    width:100%;padding:11px 13px;border:1.5px solid rgba(105,3,28,.15);border-radius:10px;
-    font-size:14px;font-family:inherit;background:rgba(255,255,255,.65);color:var(--maroon-dark);
-  }
-  .add-card button{
-    width:100%;margin-top:14px;padding:12px;background:linear-gradient(135deg, var(--maroon), var(--gold));
-    color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;
-    box-shadow:0 6px 16px rgba(105,3,28,.22);
+  .note{
+    background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:16px;
+    font-size:12.5px;line-height:2;color:var(--maroon-dark);opacity:.85;
+    box-shadow:0 4px 12px rgba(105,3,28,.06);
   }
 
-  .company-group{padding:16px 18px;margin-bottom:14px;}
-  .company-title{font-size:15px;font-weight:800;color:var(--maroon);margin-bottom:10px;}
-  .row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(105,3,28,.07);}
-  .row:last-child{border-bottom:none;}
-  .row span{flex:1;font-size:13.5px;}
-  .row .price{color:var(--gold);font-weight:800;white-space:nowrap;}
-  .row button{
-    background:rgba(183,28,28,.1);color:#b71c1c;border:none;border-radius:8px;
-    padding:6px 10px;font-size:12px;cursor:pointer;font-family:inherit;
+  .new-company{
+    display:flex;gap:8px;margin-bottom:18px;
   }
+  .new-company input{
+    flex:1;padding:11px 13px;border:1.5px dashed var(--gold);border-radius:10px;
+    font-size:14px;background:#fff;font-family:inherit;
+  }
+  .new-company button{
+    padding:11px 16px;background:linear-gradient(135deg, var(--maroon), var(--gold));
+    color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap;
+  }
+
+  .company-card{
+    background:#fff;border-radius:14px;overflow:hidden;margin-bottom:18px;
+    box-shadow:0 4px 16px rgba(105,3,28,.08);
+  }
+  .company-bar{
+    background:linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 14px;
+  }
+  .company-bar .name{color:var(--gold);font-size:15px;font-weight:800;}
+  .company-bar button{
+    background:rgba(255,255,255,.12);color:#f3d9d9;border:1px solid rgba(255,255,255,.3);
+    border-radius:8px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit;
+  }
+
+  .row{
+    display:flex;align-items:center;gap:8px;padding:10px 12px;
+    border-bottom:1px solid rgba(105,3,28,.06);
+  }
+  .row:last-child{border-bottom:none;}
+  .row .arrows{display:flex;flex-direction:column;gap:2px;}
+  .row .arrows button{
+    background:none;border:none;color:var(--maroon);font-size:11px;cursor:pointer;padding:0;line-height:1;
+  }
+  .row .del{
+    background:rgba(183,28,28,.1);color:#b71c1c;border:none;border-radius:8px;
+    width:30px;height:30px;font-size:14px;cursor:pointer;flex-shrink:0;
+  }
+  .row input{
+    border:1.5px solid rgba(105,3,28,.12);border-radius:8px;padding:8px 10px;
+    font-size:13.5px;font-family:inherit;background:#faf5ed;color:var(--maroon-dark);
+  }
+  .row .price-input{width:100px;text-align:center;font-weight:800;color:var(--gold);}
+  .row .album-input{flex:1;text-align:right;}
+
+  .add-row-btn{
+    display:block;width:100%;padding:12px;background:none;
+    border:1.5px dashed var(--gold);border-top:none;border-left:none;border-right:none;
+    color:var(--maroon);font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;
+  }
+
   .empty{text-align:center;padding:40px 10px;opacity:.6;}
 </style>
 </head>
@@ -87,21 +100,20 @@
   </div>
   <h1>مدیریت لیست قیمت</h1>
 
-  <div id="loginBox" class="glass">
+  <div id="loginBox">
     <input type="password" id="pwd" placeholder="رمز عبور">
     <button onclick="login()">ورود</button>
     <div id="loginErr">رمز اشتباه است</div>
   </div>
 
   <div id="panel">
-    <div class="glass add-card">
-      <label>نام شرکت</label>
-      <input type="text" id="company" placeholder="مثلاً: اوکو دیزاین">
-      <label>اسم آلبوم</label>
-      <input type="text" id="album" placeholder="مثلاً: روما">
-      <label>قیمت (تومان، هر رول)</label>
-      <input type="text" id="price" placeholder="مثلاً: 850,000">
-      <button onclick="addItem()">افزودن به لیست</button>
+    <div class="note">
+      قیمت‌ها و اسم آلبوم رو مستقیم توی همین کادرها تغییر بده — خودش ذخیره میشه و فوراً روی سایت اصلی نمایش داده میشه. برای اضافه/حذف از دکمه‌های مربوطه استفاده کن.
+    </div>
+
+    <div class="new-company">
+      <input type="text" id="newCompanyName" placeholder="+ نام شرکت جدید">
+      <button onclick="addCompany()">افزودن شرکت</button>
     </div>
 
     <div id="list"></div>
@@ -114,7 +126,7 @@
   const SUPABASE_ANON_KEY = "sb_publishable_o-JBZ8GP-TWfBcMWhkQK1g_vt3-wuKe";
   const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  const ADMIN_PASSWORD = "alokaghaz-admin-1404"; // ⚠️ همون رمز پنل اصلی - قابل تغییر
+  const ADMIN_PASSWORD = "alokaghaz-admin-1404";
 
   let allItems = [];
 
@@ -133,64 +145,104 @@
     const { data, error } = await supabaseClient
       .from('price_list')
       .select('*')
-      .order('company', { ascending: true });
+      .order('sort_order', { ascending: true });
     if(error){
       document.getElementById('list').innerHTML = "<div class='empty'>خطا در دریافت اطلاعات</div>";
       console.error(error);
       return;
     }
-    allItems = data;
+    allItems = data || [];
     render();
   }
 
   function render(){
     const list = document.getElementById('list');
     if(allItems.length === 0){
-      list.innerHTML = "<div class='empty'>هنوز موردی اضافه نشده</div>";
+      list.innerHTML = "<div class='empty'>هنوز شرکتی اضافه نشده — از بالا شروع کن</div>";
       return;
     }
+    const companies = [];
     const grouped = {};
     allItems.forEach(item => {
-      if(!grouped[item.company]) grouped[item.company] = [];
+      if(!grouped[item.company]){ grouped[item.company] = []; companies.push(item.company); }
       grouped[item.company].push(item);
     });
-    list.innerHTML = Object.keys(grouped).map(company => `
-      <div class="glass company-group">
-        <div class="company-title">${company}</div>
-        ${grouped[company].map(a => `
-          <div class="row">
-            <span>${a.album}</span>
-            <span class="price">${a.price} تومان</span>
-            <button onclick="deleteItem('${a.id}')">حذف</button>
+
+    list.innerHTML = companies.map(company => `
+      <div class="company-card">
+        <div class="company-bar">
+          <button onclick="deleteCompany('${company.replace(/'/g,"\\'")}')">حذف دسته</button>
+          <span class="name">${company}</span>
+        </div>
+        ${grouped[company].map((a, idx) => `
+          <div class="row" data-id="${a.id}">
+            <button class="del" onclick="deleteItem('${a.id}')">×</button>
+            <div class="arrows">
+              <button onclick="moveItem('${a.id}', -1)">▲</button>
+              <button onclick="moveItem('${a.id}', 1)">▼</button>
+            </div>
+            <input class="price-input" value="${a.price}" onchange="updateField('${a.id}','price',this.value)">
+            <input class="album-input" value="${a.album}" onchange="updateField('${a.id}','album',this.value)">
           </div>
         `).join('')}
+        <button class="add-row-btn" onclick="addAlbum('${company.replace(/'/g,"\\'")}')">+ افزودن آلبوم</button>
       </div>
     `).join('');
   }
 
-  async function addItem(){
-    const company = document.getElementById('company').value.trim();
-    const album = document.getElementById('album').value.trim();
-    const price = document.getElementById('price').value.trim();
-    if(!company || !album || !price){
-      alert("لطفاً هر سه فیلد رو پر کن");
-      return;
-    }
-    const { error } = await supabaseClient.from('price_list').insert([{ company, album, price }]);
-    if(error){
-      alert("خطا در ثبت");
-      console.error(error);
-      return;
-    }
-    document.getElementById('company').value = "";
-    document.getElementById('album').value = "";
-    document.getElementById('price').value = "";
+  async function addCompany(){
+    const name = document.getElementById('newCompanyName').value.trim();
+    if(!name) return;
+    const maxOrder = allItems.reduce((m,i) => Math.max(m, i.sort_order||0), 0);
+    const { error } = await supabaseClient.from('price_list').insert([{
+      company: name, album: "آلبوم جدید", price: "0", sort_order: maxOrder + 1
+    }]);
+    if(error){ alert("خطا در ثبت"); console.error(error); return; }
+    document.getElementById('newCompanyName').value = "";
     loadItems();
   }
 
+  async function addAlbum(company){
+    const maxOrder = allItems.reduce((m,i) => Math.max(m, i.sort_order||0), 0);
+    const { error } = await supabaseClient.from('price_list').insert([{
+      company, album: "آلبوم جدید", price: "0", sort_order: maxOrder + 1
+    }]);
+    if(error){ alert("خطا در ثبت"); console.error(error); return; }
+    loadItems();
+  }
+
+  async function updateField(id, field, value){
+    const payload = {};
+    payload[field] = value;
+    const { error } = await supabaseClient.from('price_list').update(payload).eq('id', id);
+    if(error){ alert("خطا در ذخیره"); console.error(error); }
+  }
+
   async function deleteItem(id){
-    if(!confirm("حذف بشه؟")) return;
+    if(!confirm("این آلبوم حذف بشه؟")) return;
     await supabaseClient.from('price_list').delete().eq('id', id);
+    loadItems();
+  }
+
+  async function deleteCompany(company){
+    if(!confirm(`کل دسته "${company}" حذف بشه؟`)) return;
+    await supabaseClient.from('price_list').delete().eq('company', company);
+    loadItems();
+  }
+
+  async function moveItem(id, direction){
+    const idx = allItems.findIndex(i => i.id === id);
+    if(idx === -1) return;
+    const swapIdx = idx + direction;
+    if(swapIdx < 0 || swapIdx >= allItems.length) return;
+    // فقط در همون دسته جابه‌جا بشه
+    if(allItems[swapIdx].company !== allItems[idx].company) return;
+
+    const a = allItems[idx], b = allItems[swapIdx];
+    const aOrder = a.sort_order, bOrder = b.sort_order;
+
+    await supabaseClient.from('price_list').update({ sort_order: bOrder }).eq('id', a.id);
+    await supabaseClient.from('price_list').update({ sort_order: aOrder }).eq('id', b.id);
     loadItems();
   }
 </script>

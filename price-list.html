@@ -121,7 +121,7 @@
     const { data, error } = await supabaseClient
       .from('price_list')
       .select('*')
-      .order('company', { ascending: true });
+      .order('sort_order', { ascending: true });
 
     const list = document.getElementById('list');
     if(error || !data || data.length === 0){
